@@ -28,7 +28,6 @@ namespace Module2HW2
         {
             _deviceServise.GetAllDevices();
             _deviceServise.Print();
-            Console.WriteLine("\n----------------------------------------\n");
             _basket.AddDevice(122);
             _basket.AddDevice(177);
             _basket.AddDevice(100);
@@ -36,7 +35,7 @@ namespace Module2HW2
             _basket.AddDevice(199);
             _orderService.ToOrder();
             _userService.CreateUser("София", "Руцкая", "Донецька обл., Вул. Вільна 14/10", 1234567890, "email@gmail.ua");
-            _orderService.FinishOrder();
+            _orderService.FinishOrder(_userService);
         }
     }
 }
