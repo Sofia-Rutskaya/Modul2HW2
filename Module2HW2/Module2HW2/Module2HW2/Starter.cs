@@ -12,10 +12,14 @@ namespace Module2HW2
         private ConfigService _config;
         private DeviceServise _deviceServise;
         private BasketService _basket;
+        private UserService _userService;
+        private OrderService _orderService;
 
         public Starter()
         {
+            _orderService = new OrderService();
             _config = new ConfigService();
+            _userService = new UserService();
             _deviceServise = new DeviceServise();
             _basket = new BasketService();
         }
@@ -30,7 +34,9 @@ namespace Module2HW2
             _basket.AddDevice(100);
             _basket.AddDevice(111);
             _basket.AddDevice(199);
-            _basket.PrintDevices();
+            _orderService.ToOrder();
+            _userService.CreateUser("София", "Руцкая", "Донецька обл., Вул. Вільна 14/10", 1234567890, "email@gmail.ua");
+            _orderService.FinishOrder();
         }
     }
 }
