@@ -17,10 +17,10 @@ namespace Module2HW2.Service
             _emailMessage = new EmailMessageService();
         }
 
-        public void Messages(int i, UserService user)
+        public void Messages(int numberOfOrder, string name, string placeOfResidence, int phoneNumber, string email, double sumOfOrder)
         {
-            _smsMessage.PrintMessage(i, user);
-            _emailMessage.PrintMessage(i, user);
+            _smsMessage.PrintMessage(numberOfOrder, name, placeOfResidence, phoneNumber, sumOfOrder);
+            _emailMessage.PrintMessage(numberOfOrder, name, placeOfResidence, email, sumOfOrder);
         }
     }
 }

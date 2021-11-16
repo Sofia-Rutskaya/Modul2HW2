@@ -6,7 +6,7 @@ namespace Module2HW2
     {
         public static void Main(string[] args)
         {
-            Starter start = new Starter();
+            var start = new Starter();
             start.Run();
         }
     }

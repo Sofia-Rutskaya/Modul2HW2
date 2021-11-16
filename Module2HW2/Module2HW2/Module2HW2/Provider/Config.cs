@@ -8,7 +8,7 @@ namespace Module2HW2.Provider
 {
     public class Config
     {
-        public int BasketOfUser => 10;
-        public Currency Currenc => Currency.UAN;
+        public Currency Currenc { get; set; } = Currency.UAN;
+        public int BasketOfUser { get; set; } = 10;
     }
 }

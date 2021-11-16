@@ -8,10 +8,16 @@ namespace Module2HW2.Service
 {
     public class SmsMessageService
     {
-        public void PrintMessage(int a, UserService user)
+        private ConfigService _config;
+        public SmsMessageService()
         {
-            Console.WriteLine($"\n\nНа ваш номер {user.TelNumber} было отправлено уведомление о заказе.\n" +
-                $"Вам отправлен заказ {a}\n на имя {user.Name} {user.LastName}\n по адресу {user.PlaceOfResidence}");
+            _config = new ConfigService();
+        }
+
+        public void PrintMessage(int numberOfOrder, string name, string placeOfResidence, int phoneNumber, double sumOfOrder)
+        {
+            Console.WriteLine($"На ваш номер {phoneNumber} было отправлено уведомление о заказе.{Environment.NewLine}" +
+                $"Вам отправлен заказ {numberOfOrder} на имя {name} по адресу {placeOfResidence}{Environment.NewLine}Общая сумма составляет {sumOfOrder} {_config.GetCurrency()}{Environment.NewLine}");
         }
     }
 }

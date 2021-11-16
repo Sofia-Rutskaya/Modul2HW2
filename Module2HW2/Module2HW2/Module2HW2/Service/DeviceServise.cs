@@ -10,13 +10,13 @@ namespace Module2HW2.Service
     public class DeviceServise
     {
         private ConfigService _configService;
-        private ShopDevices _shopDevices;
+        private AllDevicesInShop _shopDevices;
         private Device[] _device;
 
         public DeviceServise()
         {
             _configService = new ConfigService();
-            _shopDevices = new ShopDevices();
+            _shopDevices = new AllDevicesInShop();
         }
 
         public Device[] GetAllDevices()
@@ -42,14 +42,6 @@ namespace Module2HW2.Service
             }
 
             return _device;
-        }
-
-        public void Print()
-        {
-            for (var i = 0; i < _device.Length; i++)
-            {
-                _shopDevices.PrintDevices(i);
-            }
         }
     }
 }

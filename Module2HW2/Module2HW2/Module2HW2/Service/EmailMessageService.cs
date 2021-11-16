@@ -8,10 +8,16 @@ namespace Module2HW2.Service
 {
     public class EmailMessageService
     {
-        public void PrintMessage(int a, UserService user)
+        private ConfigService _config;
+        public EmailMessageService()
         {
-            Console.WriteLine($"\n\nНа вашу почту {user.Email} было отправлено уведомление о заказе.\n" +
-                $"Вам отправлен заказ {a}\n на имя {user.Name} {user.LastName}\n по адресу {user.PlaceOfResidence}");
+            _config = new ConfigService();
+        }
+
+        public void PrintMessage(int numberOfOrder, string name, string placeOfResidence, string email, double sumOfOrder)
+        {
+            Console.WriteLine($"На вашу почту {email} было отправлено уведомление о заказе.{Environment.NewLine}" +
+                $"Вам отправлен заказ {numberOfOrder} на имя {name} по адресу {placeOfResidence}{Environment.NewLine}Общая сумма составляет {sumOfOrder} {_config.GetCurrency()}{Environment.NewLine}");
         }
     }
 }

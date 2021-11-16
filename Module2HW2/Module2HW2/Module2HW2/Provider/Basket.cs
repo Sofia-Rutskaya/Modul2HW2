@@ -37,12 +37,9 @@ namespace Module2HW2.Provider
             }
         }
 
-        public void PrintBasket(int i)
+        public Device[] GetBusketDevises()
         {
-            if (_basket[i] != null)
-            {
-                Console.WriteLine($"#{_basket[i].ID}\nName:  {_basket[i].Name}\nModel: {_basket[i].Model}\nPrice: {_basket[i].Price} {_basket[i].Currency}\n\n");
-            }
+            return _basket;
         }
     }
 }

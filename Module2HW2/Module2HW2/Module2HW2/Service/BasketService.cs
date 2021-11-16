@@ -26,7 +26,7 @@ namespace Module2HW2.Service
         {
             for (var i = 0; i < _device.Length; i++)
             {
-                if (id == _device[i].ID)
+                if (id == _device[i].Id)
                 {
                     _basket.AddItems(_device[i]);
                     break;
@@ -34,12 +34,9 @@ namespace Module2HW2.Service
             }
         }
 
-        public void PrintDevices()
+        public Device[] GetBusketDevises()
         {
-            for (var i = 0; i < _configService.GetBusketSize(); i++)
-            {
-                _basket.PrintBasket(i);
-            }
+            return _basket.GetBusketDevises();
         }
     }
 }

@@ -16,6 +16,11 @@ namespace Module2HW2.Service
             _config = new Config();
         }
 
+        public void SetBusketSize(int size)
+        {
+            _config.BasketOfUser = size;
+        }
+
         public int GetBusketSize()
         {
             return _config.BasketOfUser;
@@ -24,6 +29,11 @@ namespace Module2HW2.Service
         public Currency GetCurrency()
         {
              return _config.Currenc;
+        }
+
+        public void SetCurrency(Currency currency)
+        {
+            _config.Currenc = currency;
         }
     }
 }
